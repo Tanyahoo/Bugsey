@@ -1,0 +1,16 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Ionic App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item *ngFor="let c of countries">
+      <ion-button fill="clear" (click)="openCountryDetails(c)" >{{ c.name.official }}</ion-button>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

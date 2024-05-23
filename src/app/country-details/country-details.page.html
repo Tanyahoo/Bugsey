@@ -1,0 +1,51 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      CountryDetails
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+  <ion-content [fullscreen]="true">
+    
+      <ion-header>
+        <ion-img src= "{{ flag }}" style="width:30%" ></ion-img>
+        </ion-header>
+      <ion-item>
+        <h4>{{ countryName}}</h4>
+      </ion-item>
+      <ion-item>
+        <ion-label><p>{{ capital }}</p></ion-label>
+      </ion-item>
+      <ion-item >
+        <ion-label><small>{{ weather2}}</small></ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label><small>{{ population }}</small></ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label></ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label><p>Languages:</p></ion-label>
+      </ion-item>
+      <ion-item *ngFor="let l of languag">
+        <ion-label>{{l}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label></ion-label>
+      </ion-item>
+      
+      <ion-item>
+        <ion-label position="stacked">Enter {{ currency2}} amount:</ion-label>
+        <ion-input type="number" placeholder="00.00" [(ngModel)]="inputAmount" label="Number:"></ion-input>
+      </ion-item>
+      
+      <ion-button (click)="getConvertedAmount()" [disabled]="!inputAmount">CONVERT TO EURO</ion-button>
+    
+    <ion-item>
+      <ion-label>{{ returnedAmount2 }}</ion-label>
+    </ion-item>
+
+
